@@ -1,0 +1,12 @@
+<div>
+    @for (user of users; track user.id) {
+        <button (click)="onSelectUser($index)" [class.active]="user.active">
+            <img [src]="'assets/users/' + user.avatar" [alt]="user.name" />
+                                                                        <!-- Even though imagePath is a function, here its value is obtained by calling it without putting the parentheses
+                                                                        This is because imagePath is a get function type -->
+            <span> {{user.name}} </span>
+            <!-- Here, even though selectedUser is a property of UserComponent class we have to putting it parentheses like a function
+                                                                         to can call it because selectedUser is a signal  -->
+        </button>
+    }
+</div>
